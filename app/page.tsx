@@ -184,7 +184,7 @@ export default function AboutPage() {
     
                      {/* 标题文字 */}
                         <h1 className="text-3xl md:text-4xl font-bold mb-6 text-[#333] drop-shadow-lg">
-                            🤖 Ask me about global development!
+                            🤖 Ask me about international development!
                         </h1>
 
                      {/* 聊天消息框 */}

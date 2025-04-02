@@ -82,11 +82,7 @@ export default function AboutPage() {
                 email: renopt9@gmail.com
                 </p>
 
-                <div className="flex justify-center space-x-6 mt-8">
-                    <a href="https://github.com" target="_blank">
-                        <Image src="/Github Logo.png" alt="GitHub" width={48} height={48} />
-                    </a>
-                </div>
+                
             </section>
         </main>
     );
