@@ -61,7 +61,7 @@ export default function AboutPage() {
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/hello")
+        fetch("/api/hello")
         .then(res => res.json())
         .then(data => console.log("✅ 来自 FastAPI 的数据:", data))
         .catch(err => console.error("❌ 请求失败:", err));
@@ -103,10 +103,10 @@ export default function AboutPage() {
         setLoading(true)
      
       try {
-          const res = await fetch('http://localhost:8000/api/generate', {
+          const res = await fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ text: input })
+              body: JSON.stringify({ input })
           })
           const data = await res.json()
           setMessages((prev) => [...prev, { role: 'assistant', content: data.response }])
