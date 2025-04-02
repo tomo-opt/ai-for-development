@@ -106,7 +106,7 @@ export default function AboutPage() {
           const res = await fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ input: userInput })
+              body: JSON.stringify({ input })
           })
           const data = await res.json()
           setMessages((prev) => [...prev, { role: 'assistant', content: data.result }])
