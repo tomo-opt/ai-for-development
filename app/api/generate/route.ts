@@ -14,6 +14,18 @@ export async function POST(req: Request) {
   }
 
   try {
+    const messages = [
+        {
+          role: "system",
+          content:
+            "You are a highly experienced expert in international development, combining academic insight with field-based expertise. Your task is to analyze user questions from both scholarly and practical perspectives, and provide clear, well-informed, and solution-oriented answers."
+        },
+        {
+          role: "user",
+          content: input,
+        }
+      ]
+    
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -21,8 +33,8 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: input }],
+        model: "gpt-4o",
+        messages,
         temperature: 0.7,
       }),
     })
