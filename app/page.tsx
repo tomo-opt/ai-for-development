@@ -106,10 +106,10 @@ export default function AboutPage() {
           const res = await fetch('/api/generate', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ input })
+              body: JSON.stringify({ input: userInput })
           })
           const data = await res.json()
-          setMessages((prev) => [...prev, { role: 'assistant', content: data.response }])
+          setMessages((prev) => [...prev, { role: 'assistant', content: data.result }])
           await saveMessage('assistant', data.response, sessionId)
       } catch (err) {
           setMessages((prev) => [...prev, { role: 'assistant', content: '❌ GPT 请求失败' }])
