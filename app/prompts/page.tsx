@@ -38,6 +38,38 @@ export default function AboutPage() {
                     You're an M&E officer. Generate a logical framework with inputs, outputs, outcomes, and indicators for a digital literacy project targeting rural youth in Sub-Saharan Africa.
                     `,
         },
+        {
+            title: '🌍 Situation Analysis',
+            description: 'Use this prompt to synthesize macro- and micro-level data to justify a development intervention.',
+            markdown: `
+                    **Prompt:**  
+                   You are a development analyst. Generate a situation analysis for [country/region] to support a proposal for intervention in [sector]. Use primary and secondary sources to assess socio-economic conditions, infrastructure gaps, and policy environments. Justify the need for the project clearly.
+                    `,
+        },
+        {
+            title: '👥 Stakeholder Mapping',
+            description: 'Use this prompt to identify and assess actors affected by or influential in a development project.',
+            markdown: `
+                    **Prompt:**  
+                   Act as a development advisor. Identify key stakeholders for a project in [sector] in [location]. Classify them by influence and interest using a stakeholder matrix. Consider local communities, government entities, donors, and private sector actors.
+                    `,
+        },
+        {
+            title: '⚖ Political Economy Analysis',
+            description: 'Use this to explore power dynamics and institutional incentives surrounding an intervention.',
+            markdown: `
+                    **Prompt:**  
+                   You are a governance specialist. Conduct a political economy analysis for a proposed intervention in [sector]. Identify relevant actors, their interests, incentives, and how they control or allocate resources. Suggest risks and entry points for change.
+                    `,
+        },
+        {
+            title: '🌳 Problem Tree Construction',
+            description: 'Use this prompt to visualize root causes and effects of a development challenge.',
+            markdown: `
+                    **Prompt:**  
+                   As a participatory development facilitator, construct a problem tree to diagnose the underlying causes of [development issue, e.g., poor maternal health] in [location]. Identify root causes, core problems, and key consequences in a structured way.
+                    `,
+        },
       ];
     
     const colors = ['#FDE68A', '#C7D2FE', '#A7F3D0', '#FECACA', '#E9D5FF'];

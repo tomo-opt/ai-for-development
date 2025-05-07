@@ -110,7 +110,7 @@ export default function AboutPage() {
           })
           const data = await res.json()
           setMessages((prev) => [...prev, { role: 'assistant', content: data.result }])
-          await saveMessage('assistant', data.response, sessionId)
+          await saveMessage('assistant', data.result, sessionId)
       } catch (err) {
           setMessages((prev) => [...prev, { role: 'assistant', content: '❌ GPT 请求失败' }])
       } finally {

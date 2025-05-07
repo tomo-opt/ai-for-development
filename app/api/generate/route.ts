@@ -8,7 +8,7 @@ import { NextResponse } from 'next/server'
 export async function POST(req: Request) {
   const { input } = await req.json()
 
-  const apiKey = process.env.OPENAI_API_KEY
+  const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY
   if (!apiKey) {
     return NextResponse.json({ error: 'Missing API Key' }, { status: 500 })
   }
@@ -33,20 +33,22 @@ export async function POST(req: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "gpt-4o",
+        model: "gpt-3.5-turbo",
         messages,
         temperature: 0.7,
       }),
     })
 
     const data = await response.json()
+    console.log("✅ OpenAI 返回内容：", JSON.stringify(data, null, 2))
 
     if (data.error) {
       return NextResponse.json({ error: data.error.message }, { status: 500 })
     }
 
     return NextResponse.json({ result: data.choices[0].message.content })
-  } catch (err) {
-    return NextResponse.json({ error: "OpenAI request failed" }, { status: 500 })
+  } catch (err: any) {
+    console.error('❌ OpenAI 报错信息:', err)  // <-- 打印真实报错
+    return NextResponse.json({ error: err?.message || "Unknown error" }, { status: 500 })
   }
 }
